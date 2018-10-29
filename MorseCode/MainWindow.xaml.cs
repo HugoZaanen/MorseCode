@@ -92,17 +92,27 @@ namespace MorseCode
             string morse = "";
 
             foreach (char ch in dutchArray)
-                
+
                 if (ch == ' ')
-                     morse
+                    morse += " ";
                 else
                     morse += DutchToMorse[ch];
             MorseBox.Text = morse;
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+           for(int i = 0; i < MorseBox.Text.Length;i++)
+            {
+                string box = "";
 
+                while (MorseBox.Text != " ")
+                {
+
+                }
+            }
+            
         }
     }
 }
