@@ -107,10 +107,13 @@ namespace MorseCode
             {
                 string box = "";
 
-                while (MorseBox.Text != " ")
+                while(MorseBox.Text.Substring(i,1) != " ")
                 {
-
+                    box += MorseBox.Text.Substring(i,1);
+                    i++;
                 }
+
+                MessageBox.Show(box);
             }
             
         }
