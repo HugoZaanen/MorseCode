@@ -7,10 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="MorseBox" HorizontalAlignment="Left" Height="143" Margin="92,231,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="457"/>
-        <TextBox x:Name="DutchBox" HorizontalAlignment="Left" Height="131" Margin="92,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457"/>
+        <TextBox x:Name="MorseBox" HorizontalAlignment="Left" Height="143" Margin="92,231,0,0" TextWrapping="Wrap" Text="Morse code" VerticalAlignment="Top" Width="457"/>
+        <TextBox x:Name="DutchBox" HorizontalAlignment="Left" Height="131" Margin="92,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457" Text="Dutch"/>
         <Button Content="Morse to Dutch" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="246,181,0,0" Click="Button_Click_1"/>
         <Button Content="Dutch to Morse" HorizontalAlignment="Left" Margin="92,181,0,0" VerticalAlignment="Top" Width="105" Click="Button_Click"/>
-
     </Grid>
 </Window>

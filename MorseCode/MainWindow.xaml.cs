@@ -108,35 +108,42 @@ namespace MorseCode
 
             string morse = "";
 
-            for (int i = 0;i < MorseBox.Text.Length;i++)
+            DutchBox.Text = "";
+
+            foreach (string s in list)
             {
-                string box = ""  + MorseBox.Text[i];
-
-                if (box == " ")
-                {
-                    list.Add(morse);
-                    morse = "";
-                }
-
-                morse += box;
-                
-                if (Convert.ToChar(box) == '\\' )
-                {
-                    list.Add(" ");
-                }               
+                DutchBox.Text += MorseToDutch[s];
             }
+           
+            //for (int i = 0;i < MorseBox.Text.Length;i++)
+            //{
+            //    string box = ""  + MorseBox.Text[i];
 
-            foreach(string s in list)
-            {
-                if (s != " ")
-                {
-                    DutchBox.Text += MorseToDutch[s];
-                }
-                else
-                {
-                    DutchBox.Text += " ";
-                }
-            }
+            //    if (box == " ")
+            //    {
+            //        list.Add(morse);
+            //        morse = "";
+            //    }
+
+            //    morse += box;
+
+            //    if (Convert.ToChar(box) == '\\' )
+            //    {
+            //        list.Add(" ");
+            //    }               
+            //}
+
+            //foreach(string s in list)
+            //{
+            //    if (s != " ")
+            //    {
+            //        DutchBox.Text += MorseToDutch["."];
+            //    }
+            //    else
+            //    {
+            //        DutchBox.Text += " ";
+            //    }
+            //}
         }
     }
 }
