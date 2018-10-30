@@ -78,7 +78,8 @@ namespace MorseCode
             MorseToDutch.Add("-","t");
             MorseToDutch.Add("..--","u");
             MorseToDutch.Add("...-","v");
-            MorseToDutch.Add(".--","x");
+            MorseToDutch.Add(".--","w");
+            MorseToDutch.Add("-..-","x");
             MorseToDutch.Add("-.--","y");
             MorseToDutch.Add("--..", "z");
         }
@@ -111,14 +112,14 @@ namespace MorseCode
             {
                 string box = ""  + MorseBox.Text[i];
 
-                morse += box;
-                
-                if(box == " ")
+                if (box == " ")
                 {
                     list.Add(morse);
                     morse = "";
                 }
 
+                morse += box;
+                
                 if (Convert.ToChar(box) == '\\' )
                 {
                     list.Add(" ");
@@ -129,7 +130,11 @@ namespace MorseCode
             {
                 if (s != " ")
                 {
-                    DutchBox.Text += s;
+                    DutchBox.Text += MorseToDutch[s];
+                }
+                else
+                {
+                    DutchBox.Text += " ";
                 }
             }
         }
