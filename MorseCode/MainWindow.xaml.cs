@@ -103,19 +103,35 @@ namespace MorseCode
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-           for(int i = 0; i < MorseBox.Text.Length;i++)
-            {
-                string box = "";
+            List<string> list = new List<string>();
 
-                while(MorseBox.Text.Substring(i,1) != " ")
+            string morse = "";
+
+            for (int i = 0;i < MorseBox.Text.Length;i++)
+            {
+                string box = ""  + MorseBox.Text[i];
+
+                morse += box;
+                
+                if(box == " ")
                 {
-                    box += MorseBox.Text.Substring(i,1);
-                    i++;
+                    list.Add(morse);
+                    morse = "";
                 }
 
-                MessageBox.Show(box);
+                if (Convert.ToChar(box) == '\\' )
+                {
+                    list.Add(" ");
+                }               
             }
-            
+
+            foreach(string s in list)
+            {
+                if (s != " ")
+                {
+                    DutchBox.Text += s;
+                }
+            }
         }
     }
 }
