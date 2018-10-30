@@ -110,11 +110,17 @@ namespace MorseCode
 
             DutchBox.Text = "";
 
-            foreach (string s in list)
+            //foreach (string s in list)
+            //{
+            //    DutchBox.Text += MorseToDutch[s];
+            //}
+
+            for(int i = 0; i <= MorseBox.Text.Length;i++)
             {
-                DutchBox.Text += MorseToDutch[s];
+                morse += MorseBox.Text[i];
             }
-           
+
+            #region          
             //for (int i = 0;i < MorseBox.Text.Length;i++)
             //{
             //    string box = ""  + MorseBox.Text[i];
@@ -144,6 +150,8 @@ namespace MorseCode
             //        DutchBox.Text += " ";
             //    }
             //}
+
+            #endregion
         }
     }
 }
