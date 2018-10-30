@@ -115,10 +115,30 @@ namespace MorseCode
             //    DutchBox.Text += MorseToDutch[s];
             //}
 
-            for(int i = 0; i <= MorseBox.Text.Length;i++)
+            for(int i = 0; i < MorseBox.Text.Length;i++)
             {
-                morse += MorseBox.Text[i];
+                if (MorseBox.Text[i] != ' ' && MorseBox.Text[i] != '\\')
+                {
+                    morse += MorseBox.Text[i];
+                }
+                else if(MorseBox.Text[i] == ' ')
+                {
+                    list.Add(morse);
+                    morse = "";
+                }
+                else
+                {
+                    list.Add(morse);
+                    list.Add(" ");
+                    morse = "";
+                }
+
+                if (i == MorseBox.Text.Length - 1)
+                {
+                    list.Add(morse);
+                }
             }
+            
 
             #region          
             //for (int i = 0;i < MorseBox.Text.Length;i++)
