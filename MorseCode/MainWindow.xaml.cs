@@ -96,23 +96,21 @@ namespace MorseCode
             char check = ' ';
 
             foreach (char ch in dutchArray)
-
+            {
                 if (ch == ' ')
                 {
-                    morse += "/";
-                    check = '/';
+                    morse += "/";                    
                 }
-                else if(check == '/')
+                else if (check == '/')
                 {
-                    morse += DutchToMorse[ch];
+                    morse += DutchToMorse[ch];                   
                 }
                 else
                 {
-                    morse += " " + DutchToMorse[ch];
+                    morse += DutchToMorse[ch] + " ";
                 }
-
-            morse = morse.Substring(1);
-
+            }
+            
             MorseBox.Text = morse;
         }
 
@@ -120,7 +118,7 @@ namespace MorseCode
         {
             List<string> list = new List<string>();
 
-            string morse = "" + MorseBox.Text[0];
+            string morse = "";
             char[] mArray = MorseBox.Text.ToArray();
 
             string text = "";
@@ -150,6 +148,7 @@ namespace MorseCode
                     list.Add(morse);
                 }
             }
+            list.RemoveAll(item => item == "");
 
             foreach (string s in list)
             {
