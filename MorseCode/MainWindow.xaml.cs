@@ -55,6 +55,7 @@ namespace MorseCode
             DutchToMorse.Add('x',"-..-");
             DutchToMorse.Add('y',"-.--");
             DutchToMorse.Add('z',"--..");
+            
 
             MorseToDutch.Add(".-","a");
             MorseToDutch.Add("-...","b");
@@ -92,21 +93,35 @@ namespace MorseCode
 
             string morse = "";
 
+            char check = ' ';
+
             foreach (char ch in dutchArray)
 
                 if (ch == ' ')
-                    morse += " ";
-                else
+                {
+                    morse += "/";
+                    check = '/';
+                }
+                else if(check == '/')
+                {
                     morse += DutchToMorse[ch];
-            MorseBox.Text = morse;
+                }
+                else
+                {
+                    morse += " " + DutchToMorse[ch];
+                }
 
+            morse = morse.Substring(1);
+
+            MorseBox.Text = morse;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<string> list = new List<string>();
 
-            string morse = "";
+            string morse = "" + MorseBox.Text[0];
+            char[] mArray = MorseBox.Text.ToArray();
 
             string text = "";
 
